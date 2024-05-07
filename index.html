@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="gerador-link-wpp.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="shortcut icon" href="./icone-whats.png" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Sedgwick+Ave+Display&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <title>Criação de Links </title>
+</head>
+
+<body>
+  <section>
+    <div id="app">
+      <img src="./icone-whats.png" class="icone" alt="WhatsApp">
+      <h2>Criação de Links para <span class="greenTitle">WhatsApp</span></h2>
+      <div class="container-phone">
+        <input type="number" v-model="prefix" class="prefix">
+        <input v-model="phone" type="number" placeholder="N° do celular (DDD+número)" class="phone">
+      </div>
+      <textarea v-model="text" placeholder="Mensagem de texto"></textarea>
+
+      <button @click="gerarLink">Gerador de Links</button>
+
+      <span class="link greenName" v-if="link">
+        Link gerado! <figure>➜</figure>
+        <a :href="link" target="_blanck">Ir para o Link</a>
+      </span>
+    </div>
+    <img src="./cellWhats.png" class="cell" alt="WhatsApp Celular">
+  </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</body>
+<script src="./script.js"></script>
+
+</html>
